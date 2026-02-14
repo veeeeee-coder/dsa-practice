@@ -1,0 +1,51 @@
+// Problem: Maximum Product of Three Numbers
+// Platform: LeetCode
+// Pattern: Sorting + Greedy
+// Key Insight:
+// - Maximum product comes from either:
+//   (largest * second largest * third largest)
+//   OR
+//   (two smallest negatives * largest)
+// Time: O(n log n)
+// Space: O(1) extra
+
+class Solution {
+public:
+    int maximumProduct(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        return max(nums[n-1]*nums[n-2]*nums[n-3],
+                   nums[0]*nums[1]*nums[n-1]);
+    }
+};
+
+
+template for log 
+### What I learned
+- Sorting can simplify sign-related problems
+- Two negatives can create a maximum product
+
+### What confused me
+- Why my absolute value logic failed for max product
+
+### What I fixed
+- Realized we must consider two smallest numbers, not absolute values
+
+
+At the end of the day:
+
+git add .
+git commit -m "DSA: Sorting - Maximum Product problem"
+git push
+Even if you add ONE file, commit it.
+Consistency beats intensity. Always.
+// Problem: Maximum Product of Three Numbers
+// Platform: LeetCode
+// Pattern: Sorting + Greedy
+// Key Insight:
+// - Maximum product comes from either:
+//   (largest * second largest * third largest)
+//   OR
+//   (two smallest negatives * largest)
+// Time: O(n log n)
+// Space: O(1) extra
